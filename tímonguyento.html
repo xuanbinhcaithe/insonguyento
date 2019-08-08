@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi so nguyen to</title>
+</head>
+<body>
+
+<script>
+    let number = parseInt(prompt("Số lượng số nguyên tố bạn muốn hiện thị: "));
+    let count = 0;
+    function checkNguyenTo(n) {
+        let check = true;
+        if (n == 2 || n == 3) {
+            check = true;
+        }
+        else{
+            for(var i = 2; i <= Math.sqrt(n); i++){
+                if(n % i == 0){
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+    for (var j = 2;;j++)
+    {
+        if(checkNguyenTo(j))
+        {
+            count += 1;
+            document.write("so nguyen to thu " + count + ' la: ' + j + "<br/>");
+        }
+        if(count == number)
+            break;
+    }
+</script>
+
+</body>
+</html>
